@@ -1,0 +1,20 @@
+// .custom-form {
+//     box-shadow: 0px 0px 2px 1px #88888845;
+//     padding: 50px !important;
+//     padding-bottom: 20px !important;
+//     margin-top: 25vh !important;
+//     border-radius: 6px;
+//     .success-button {
+//         float: right;
+//     }
+//     .logo {
+//         padding-bottom: 20px;
+//     }
+// }
+
+.highlight-word {
+    &:hover {
+        color: green;
+        cursor: pointer;
+    }
+}
