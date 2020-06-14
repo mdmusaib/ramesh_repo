@@ -22,10 +22,12 @@ class LoginPage extends Component {
   }
 
   login = (value) => {
+    alert("called");
     this.setState({ isLoading: true });
     this.userService
       .userService(userServiceVariables.Login, value)
       .then((res) => {
+        alert("called then");
         this.setState({ isLoading: false });
         localStorage.setItem("User", JSON.stringify(...res.data.user));
         SuccessNotification("Welcome To My App");
@@ -33,6 +35,7 @@ class LoginPage extends Component {
         console.log("called then");
       })
       .catch((err) => {
+        alert("called catch");
         console.log("called catch");
         this.setState({ isLoading: false });
         return ErrorNotification(err.response.data.message);
@@ -40,7 +43,13 @@ class LoginPage extends Component {
   };
 
   loginError = () => {
-    console.log("login failed");
+    alert("called error");
+  };
+
+  handleChange = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
   };
 
   render() {
@@ -68,7 +77,11 @@ class LoginPage extends Component {
                   },
                 ]}
               >
-                <Input prefix={<UserOutlined />} placeholder="Email Id" />
+                <Input
+                  prefix={<UserOutlined />}
+                  placeholder="Email Id"
+                  onChange={(e) => this.handleChange(e)}
+                />
               </Form.Item>
               <Form.Item
                 className=" mb-0"
