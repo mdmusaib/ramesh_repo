@@ -9,7 +9,9 @@ const app = express();
 const userRoutes = require("./api/routes/users");
 const userDetailsRoutes = require("./api/routes/UserDetails");
 
-const dbUrl = "mongodb://heroku_pqgssfnz:a9s6kk5cpte3juikctiq0vun7h@ds153775.mlab.com:53775/heroku_pqgssfnz";
+const dbUrl =
+  "mongodb://heroku_pqgssfnz:a9s6kk5cpte3juikctiq0vun7h@ds153775.mlab.com:53775/heroku_pqgssfnz";
+// const dbUrl = "mongodb://localhost/secondApp";
 const option = {
   swaggerOptions: {
     url: "http://petstore.swagger.io/v2/swagger.json",
