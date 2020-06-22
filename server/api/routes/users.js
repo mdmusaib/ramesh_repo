@@ -261,7 +261,7 @@ router.post("/resetPassword", (req, res, next) => {
   });
 });
 
-router.post("/login", (req, res, next) => {
+router.post("login", (req, res, next) => {
   console.log(req.body.email);
   User.find({ email: req.body.email })
     .exec()
