@@ -90,6 +90,10 @@ router.post("/signup", (req, res, next) => {
     });
 });
 
+router.get("musaib",(req,res,next)=>{
+  console.log(req,res);
+});
+
 router.post("/otp", (req, res, next) => {
   User.find({ email: req.body.email, OTP: req.body.otp })
     .exec()
